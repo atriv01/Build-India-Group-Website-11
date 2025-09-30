@@ -1,0 +1,16 @@
+build-india-group/
+├── index.html
+├── about.html
+├── pledges.html
+├── forums.html
+├── contact.html
+├── styles/
+│   ├── main.css
+│   └── responsive.css
+├── scripts/
+│   ├── main.js
+│   └── cms.js
+├── images/
+│   ├── logo.png
+│   └── (other images)
+└── netlify.toml
