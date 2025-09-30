@@ -1,0 +1,310 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build India Group - Fostering Good Citizenry</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- CMS Admin Panel -->
+    <div class="cms-panel" id="cmsPanel">
+        <i class="fas fa-cog"></i> Admin
+    </div>
+
+    <!-- CMS Modal -->
+    <div class="cms-modal" id="cmsModal">
+        <div class="cms-content">
+            <span class="cms-close" id="cmsClose">&times;</span>
+            <h2>Website Content Management</h2>
+            
+            <div class="cms-tabs">
+                <div class="cms-tab active" data-tab="hero">Hero Section</div>
+                <div class="cms-tab" data-tab="about">About Us</div>
+                <div class="cms-tab" data-tab="initiatives">Initiatives</div>
+                <div class="cms-tab" data-tab="pledges">Pledges</div>
+                <div class="cms-tab" data-tab="contact">Contact Info</div>
+            </div>
+            
+            <div class="cms-tab-content active" id="hero-tab">
+                <div class="cms-form-group">
+                    <label for="hero-title">Hero Title</label>
+                    <input type="text" id="hero-title" class="cms-form-control" value="Building India Through Good Citizenry">
+                </div>
+                <div class="cms-form-group">
+                    <label for="hero-description">Hero Description</label>
+                    <textarea id="hero-description" class="cms-form-control" rows="3">Join us in our mission to foster responsible citizenship among youth for a healthier, stronger nation.</textarea>
+                </div>
+                <div class="cms-form-group">
+                    <label for="hero-bg">Hero Background Image URL</label>
+                    <input type="text" id="hero-bg" class="cms-form-control" value="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80">
+                </div>
+                <button class="cms-save-btn" data-section="hero">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="about-tab">
+                <div class="cms-form-group">
+                    <label for="about-title">About Title</label>
+                    <input type="text" id="about-title" class="cms-form-control" value="About Us">
+                </div>
+                <div class="cms-form-group">
+                    <label for="about-description">About Description</label>
+                    <textarea id="about-description" class="cms-form-control" rows="3">Build India Group is a non-profit organization dedicated to nurturing responsible citizenship among India's youth.</textarea>
+                </div>
+                <div class="cms-form-group">
+                    <label for="about-mission">Our Mission</label>
+                    <textarea id="about-mission" class="cms-form-control" rows="4">Build India Group works with young people across the nation to instill values of good citizenry, environmental consciousness, and national pride.</textarea>
+                </div>
+                <button class="cms-save-btn" data-section="about">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="initiatives-tab">
+                <div class="cms-form-group">
+                    <label for="initiatives-title">Initiatives Title</label>
+                    <input type="text" id="initiatives-title" class="cms-form-control" value="Our Key Initiatives">
+                </div>
+                <div class="cms-form-group">
+                    <label for="initiatives-description">Initiatives Description</label>
+                    <textarea id="initiatives-description" class="cms-form-control" rows="3">Discover the programs that form the core of our mission to build a better India.</textarea>
+                </div>
+                <button class="cms-save-btn" data-section="initiatives">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="pledges-tab">
+                <div class="cms-form-group">
+                    <label for="pledges-title">Pledges Title</label>
+                    <input type="text" id="pledges-title" class="cms-form-control" value="Pledge in 22 Languages">
+                </div>
+                <div class="cms-form-group">
+                    <label for="pledges-description">Pledges Description</label>
+                    <textarea id="pledges-description" class="cms-form-control" rows="3">Take the citizen's pledge in your preferred language and join the movement for a better India.</textarea>
+                </div>
+                <button class="cms-save-btn" data-section="pledges">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="contact-tab">
+                <div class="cms-form-group">
+                    <label for="contact-address">Office Address</label>
+                    <input type="text" id="contact-address" class="cms-form-control" value="123 Nation Builders Avenue, New Delhi, India 110001">
+                </div>
+                <div class="cms-form-group">
+                    <label for="contact-phone">Phone Number</label>
+                    <input type="text" id="contact-phone" class="cms-form-control" value="+91 98765 43210">
+                </div>
+                <div class="cms-form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="text" id="contact-email" class="cms-form-control" value="info@buildindiagroup.in">
+                </div>
+                <button class="cms-save-btn" data-section="contact">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Build India Group Logo">
+                <h1>Build <span>India</span> Group</h1>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                    <li><a href="pledges.html">Pledges</a></li>
+                    <li><a href="forums.html">Forums</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-title">Building India Through Good Citizenry</h1>
+                <p id="hero-description">Join us in our mission to foster responsible citizenship among youth for a healthier, stronger nation.</p>
+                <div class="hero-btns">
+                    <a href="pledges.html" class="btn">Take the Pledge</a>
+                    <a href="#initiatives" class="btn btn-outline">Our Initiatives</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">About Us</h2>
+                <p id="about-description">Build India Group is a non-profit organization dedicated to nurturing responsible citizenship among India's youth.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p id="about-mission">Build India Group works with young people across the nation to instill values of good citizenry, environmental consciousness, and national pride.</p>
+                    <p>Through our various initiatives, we aim to create a generation of Indians who are not only proud of their heritage but also actively contribute to the nation's development.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>50,000+</h3>
+                            <p>Youth Engaged</p>
+                        </div>
+                        <div class="stat">
+                            <h3>22</h3>
+                            <p>Languages</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Initiatives</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Youth Engagement">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="section initiatives" id="initiatives">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="initiatives-title">Our Key Initiatives</h2>
+                <p id="initiatives-description">Discover the programs that form the core of our mission to build a better India.</p>
+            </div>
+            <div class="initiatives-grid">
+                <div class="initiative-card">
+                    <div class="initiative-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Pledge Festival</h3>
+                        <p>An annual celebration where youth from across India take pledges for good citizenry in 22 languages, promoting unity in diversity.</p>
+                        <a href="pledges.html" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Aikyatan</h3>
+                        <p>Fostering harmony and unity among diverse communities through cultural exchanges and collaborative projects.</p>
+                        <a href="about.html#aikyatan" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Haritbol</h3>
+                        <p>Our green initiative focused on environmental conservation, tree plantation, and promoting sustainable practices.</p>
+                        <a href="about.html#haritbol" class="read-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="section founder" id="founder">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Founder</h2>
+                <p>Meet Biraja Mahapatra, the visionary behind Build India Group.</p>
+            </div>
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Biraja Mahapatra">
+                </div>
+                <div class="founder-text">
+                    <h3>Biraja Mahapatra</h3>
+                    <p>Biraja Mahapatra is a passionate advocate for youth development and nation-building. His vision for Build India Group stems from a deep belief in the potential of India's youth to drive positive change.</p>
+                    <p>In his book "My Call", Biraja describes his dream of an India where every citizen actively contributes to the nation's progress through responsible citizenship.</p>
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="My Call Book Cover" class="book-cover">
+                    <p><a href="#" class="btn" style="margin-top: 15px;">Read "My Call"</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Movement</h2>
+                <p>Be part of the change. Together we can build a better India through responsible citizenry.</p>
+                <div class="cta-buttons">
+                    <a href="pledges.html" class="btn">Take the Pledge</a>
+                    <a href="contact.html" class="btn btn-outline">Volunteer With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Build India Group</h3>
+                    <p>Building India's future through good citizenry, youth empowerment, and sustainable initiatives.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#initiatives">Initiatives</a></li>
+                        <li><a href="pledges.html">Pledges</a></li>
+                        <li><a href="forums.html">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Initiatives</h3>
+                    <ul class="footer-links">
+                        <li><a href="pledges.html">Pledge Festival</a></li>
+                        <li><a href="about.html#aikyatan">Aikyatan</a></li>
+                        <li><a href="about.html#haritbol">Haritbol</a></li>
+                        <li><a href="forums.html">Youth Empowerment</a></li>
+                        <li><a href="contact.html">Community Outreach</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to get updates on our initiatives and events.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Build India Group. All Rights Reserved. | Designed with ❤️ for India</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cms.js"></script>
+</body>
+</html>

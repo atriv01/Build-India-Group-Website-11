@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build India Group - Fostering Good Citizenry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Customization */
+        :root {
+            --primary-color: #FF9933; /* Saffron */
+            --secondary-color: #138808; /* Green */
+            --accent-color: #000080; /* Navy Blue */
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #777;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 4px;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 0;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* Initiatives Section */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .initiative-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .initiative-icon {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-size: 2.5rem;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .initiative-content {
+            padding: 25px;
+        }
+
+        .initiative-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        /* Pledges Section */
+        .pledges {
+            background-color: var(--light-color);
+        }
+
+        .pledge-languages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .language-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .language-btn.active,
+        .language-btn:hover {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-color: transparent;
+        }
+
+        .pledge-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .pledge-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .pledge-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Founder Section */
+        .founder-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .founder-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .founder-text {
+            flex: 1;
+        }
+
+        .book-cover {
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Forums Section */
+        .forums {
+            background-color: var(--light-color);
+        }
+
+        .forum-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .forum-category {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .forum-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .forum-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .forum-category h3 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .forum-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .info-icon {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .info-text h3 {
+            margin-bottom: 5px;
+            color: var(--accent-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--accent-color), var(--dark-color));
+            color: white;
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* CMS Admin Panel */
+        .cms-panel {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px 0 0 5px;
+            z-index: 1001;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cms-panel:hover {
+            background: var(--primary-color);
+        }
+
+        .cms-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1002;
+            overflow-y: auto;
+        }
+
+        .cms-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            position: relative;
+        }
+
+        .cms-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .cms-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .cms-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .cms-tab.active {
+            border-bottom: 3px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .cms-tab-content {
+            display: none;
+        }
+
+        .cms-tab-content.active {
+            display: block;
+        }
+
+        .cms-form-group {
+            margin-bottom: 20px;
+        }
+
+        .cms-form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .cms-form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+        }
+
+        .cms-save-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .founder-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-image,
+            .founder-image {
+                order: -1;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                z-index: 999;
+                padding: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .about-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .pledge-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cms-panel {
+                display: none; /* Hide CMS panel on mobile for simplicity */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .pledge-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CMS Admin Panel -->
+    <div class="cms-panel" id="cmsPanel">
+        <i class="fas fa-cog"></i> Admin
+    </div>
+
+    <!-- CMS Modal -->
+    <div class="cms-modal" id="cmsModal">
+        <div class="cms-content">
+            <span class="cms-close" id="cmsClose">&times;</span>
+            <h2>Website Content Management</h2>
+            
+            <div class="cms-tabs">
+                <div class="cms-tab active" data-tab="hero">Hero Section</div>
+                <div class="cms-tab" data-tab="about">About Us</div>
+                <div class="cms-tab" data-tab="initiatives">Initiatives</div>
+                <div class="cms-tab" data-tab="pledges">Pledges</div>
+                <div class="cms-tab" data-tab="contact">Contact Info</div>
+            </div>
+            
+            <div class="cms-tab-content active" id="hero-tab">
+                <div class="cms-form-group">
+                    <label for="hero-title">Hero Title</label>
+                    <input type="text" id="hero-title" class="cms-form-control" value="Building India Through Good Citizenry">
+                </div>
+                <div class="cms-form-group">
+                    <label for="hero-description">Hero Description</label>
+                    <textarea id="hero-description" class="cms-form-control" rows="3">Join us in our mission to foster responsible citizenship among youth for a healthier, stronger nation.</textarea>
+                </div>
+                <div class="cms-form-group">
+                    <label for="hero-bg">Hero Background Image URL</label>
+                    <input type="text" id="hero-bg" class="cms-form-control" value="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80">
+                </div>
+                <button class="cms-save-btn" data-section="hero">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="about-tab">
+                <div class="cms-form-group">
+                    <label for="about-title">About Title</label>
+                    <input type="text" id="about-title" class="cms-form-control" value="About Us">
+                </div>
+                <div class="cms-form-group">
+                    <label for="about-description">About Description</label>
+                    <textarea id="about-description" class="cms-form-control" rows="3">Build India Group is a non-profit organization dedicated to nurturing responsible citizenship among India's youth.</textarea>
+                </div>
+                <div class="cms-form-group">
+                    <label for="about-mission">Our Mission</label>
+                    <textarea id="about-mission" class="cms-form-control" rows="4">Build India Group works with young people across the nation to instill values of good citizenry, environmental consciousness, and national pride.</textarea>
+                </div>
+                <button class="cms-save-btn" data-section="about">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="initiatives-tab">
+                <div class="cms-form-group">
+                    <label for="initiatives-title">Initiatives Title</label>
+                    <input type="text" id="initiatives-title" class="cms-form-control" value="Our Key Initiatives">
+                </div>
+                <div class="cms-form-group">
+                    <label for="initiatives-description">Initiatives Description</label>
+                    <textarea id="initiatives-description" class="cms-form-control" rows="3">Discover the programs that form the core of our mission to build a better India.</textarea>
+                </div>
+                <button class="cms-save-btn" data-section="initiatives">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="pledges-tab">
+                <div class="cms-form-group">
+                    <label for="pledges-title">Pledges Title</label>
+                    <input type="text" id="pledges-title" class="cms-form-control" value="Pledge in 22 Languages">
+                </div>
+                <div class="cms-form-group">
+                    <label for="pledges-description">Pledges Description</label>
+                    <textarea id="pledges-description" class="cms-form-control" rows="3">Take the citizen's pledge in your preferred language and join the movement for a better India.</textarea>
+                </div>
+                <button class="cms-save-btn" data-section="pledges">Save Changes</button>
+            </div>
+            
+            <div class="cms-tab-content" id="contact-tab">
+                <div class="cms-form-group">
+                    <label for="contact-address">Office Address</label>
+                    <input type="text" id="contact-address" class="cms-form-control" value="123 Nation Builders Avenue, New Delhi, India 110001">
+                </div>
+                <div class="cms-form-group">
+                    <label for="contact-phone">Phone Number</label>
+                    <input type="text" id="contact-phone" class="cms-form-control" value="+91 98765 43210">
+                </div>
+                <div class="cms-form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="text" id="contact-email" class="cms-form-control" value="info@buildindiagroup.in">
+                </div>
+                <button class="cms-save-btn" data-section="contact">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://www.buildindiagroup.in/wp-content/uploads/2021/08/cropped-Build-India-Group-Logo-1.png" alt="Build India Group Logo">
+                <h1>Build <span>India</span> Group</h1>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                    <li><a href="#pledges">Pledges</a></li>
+                    <li><a href="#founder">Founder</a></li>
+                    <li><a href="#forums">Forums</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-title">Building India Through Good Citizenry</h1>
+                <p id="hero-description">Join us in our mission to foster responsible citizenship among youth for a healthier, stronger nation.</p>
+                <div class="hero-btns">
+                    <a href="#pledges" class="btn">Take the Pledge</a>
+                    <a href="#initiatives" class="btn btn-outline">Our Initiatives</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">About Us</h2>
+                <p id="about-description">Build India Group is a non-profit organization dedicated to nurturing responsible citizenship among India's youth.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p id="about-mission">Build India Group works with young people across the nation to instill values of good citizenry, environmental consciousness, and national pride.</p>
+                    <p>Through our various initiatives, we aim to create a generation of Indians who are not only proud of their heritage but also actively contribute to the nation's development.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>50,000+</h3>
+                            <p>Youth Engaged</p>
+                        </div>
+                        <div class="stat">
+                            <h3>22</h3>
+                            <p>Languages</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Initiatives</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Youth Engagement">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="section initiatives" id="initiatives">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="initiatives-title">Our Key Initiatives</h2>
+                <p id="initiatives-description">Discover the programs that form the core of our mission to build a better India.</p>
+            </div>
+            <div class="initiatives-grid">
+                <div class="initiative-card">
+                    <div class="initiative-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Pledge Festival</h3>
+                        <p>An annual celebration where youth from across India take pledges for good citizenry in 22 languages, promoting unity in diversity.</p>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Aikyatan</h3>
+                        <p>Fostering harmony and unity among diverse communities through cultural exchanges and collaborative projects.</p>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Haritbol</h3>
+                        <p>Our green initiative focused on environmental conservation, tree plantation, and promoting sustainable practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pledges Section -->
+    <section class="section pledges" id="pledges">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="pledges-title">Pledge in 22 Languages</h2>
+                <p id="pledges-description">Take the citizen's pledge in your preferred language and join the movement for a better India.</p>
+            </div>
+            <div class="pledge-languages">
+                <button class="language-btn active" data-lang="english">English</button>
+                <button class="language-btn" data-lang="hindi">Hindi</button>
+                <button class="language-btn" data-lang="bengali">Bengali</button>
+                <button class="language-btn" data-lang="tamil">Tamil</button>
+                <button class="language-btn" data-lang="telugu">Telugu</button>
+                <!-- More languages would be added -->
+            </div>
+            <div class="pledge-content">
+                <div class="pledge-text" id="pledgeText">
+                    I pledge to be a responsible citizen of India, to respect its constitution, to uphold its democratic values, and to contribute positively to its growth and development. I will work towards building an inclusive, harmonious, and prosperous nation for all.
+                </div>
+                <div class="pledge-actions">
+                    <button class="btn">Take This Pledge</button>
+                    <button class="btn btn-outline">Share Pledge</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="section founder" id="founder">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Founder</h2>
+                <p>Meet Biraja Mahapatra, the visionary behind Build India Group.</p>
+            </div>
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Biraja Mahapatra">
+                </div>
+                <div class="founder-text">
+                    <h3>Biraja Mahapatra</h3>
+                    <p>Biraja Mahapatra is a passionate advocate for youth development and nation-building. His vision for Build India Group stems from a deep belief in the potential of India's youth to drive positive change.</p>
+                    <p>In his book "My Call", Biraja describes his dream of an India where every citizen actively contributes to the nation's progress through responsible citizenship.</p>
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="My Call Book Cover" class="book-cover">
+                    <p><a href="#" class="btn" style="margin-top: 15px;">Read "My Call"</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forums Section -->
+    <section class="section forums" id="forums">
+        <div class="container">
+            <div class="section-title">
+                <h2>Discussion Forums</h2>
+                <p>Join the conversation on building a better India through responsible citizenry.</p>
+            </div>
+            <div class="forum-categories">
+                <div class="forum-category">
+                    <h3><i class="fas fa-seedling"></i> Haritbol - Green Initiatives</h3>
+                    <p>Discuss environmental conservation, sustainability practices, and share ideas for a greener India.</p>
+                    <div class="forum-stats">
+                        <span>245 Topics</span>
+                        <span>1,204 Posts</span>
+                    </div>
+                </div>
+                <div class="forum-category">
+                    <h3><i class="fas fa-flag"></i> Pledge Festival Discussions</h3>
+                    <p>Share your experiences with the pledge festival and ideas for making it more impactful.</p>
+                    <div class="forum-stats">
+                        <span>189 Topics</span>
+                        <span>892 Posts</span>
+                    </div>
+                </div>
+                <div class="forum-category">
+                    <h3><i class="fas fa-hands-helping"></i> Aikyatan - Unity in Diversity</h3>
+                    <p>Exchange ideas on promoting harmony and understanding among India's diverse communities.</p>
+                    <div class="forum-stats">
+                        <span>156 Topics</span>
+                        <span>743 Posts</span>
+                    </div>
+                </div>
+                <div class="forum-category">
+                    <h3><i class="fas fa-graduation-cap"></i> Youth Empowerment</h3>
+                    <p>Discuss ways to empower young Indians to become active contributors to nation-building.</p>
+                    <div class="forum-stats">
+                        <span>278 Topics</span>
+                        <span>1,532 Posts</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn">Join Our Forums</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us to learn more about our initiatives or to collaborate with Build India Group.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Our Office</h3>
+                            <p id="contact-address">123 Nation Builders Avenue, New Delhi, India 110001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Phone Number</h3>
+                            <p id="contact-phone">+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Email Address</h3>
+                            <p id="contact-email">info@buildindiagroup.in</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Working Hours</h3>
+                            <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Build India Group</h3>
+                    <p>Building India's future through good citizenry, youth empowerment, and sustainable initiatives.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#initiatives">Initiatives</a></li>
+                        <li><a href="#pledges">Pledges</a></li>
+                        <li><a href="#forums">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Initiatives</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pledge Festival</a></li>
+                        <li><a href="#">Aikyatan</a></li>
+                        <li><a href="#">Haritbol</a></li>
+                        <li><a href="#">Youth Empowerment</a></li>
+                        <li><a href="#">Community Outreach</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to get updates on our initiatives and events.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Build India Group. All Rights Reserved. | Designed with ❤️ for India</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Language Pledge Switcher
+        const languageBtns = document.querySelectorAll('.language-btn');
+        const pledgeText = document.getElementById('pledgeText');
+        
+        // Sample pledge texts in different languages
+        const pledges = {
+            english: "I pledge to be a responsible citizen of India, to respect its constitution, to uphold its democratic values, and to contribute positively to its growth and development. I will work towards building an inclusive, harmonious, and prosperous nation for all.",
+            hindi: "मैं भारत का एक जिम्मेदार नागरिक बनने की शपथ लेता हूं, इसके संविधान का सम्मान करने, इसके लोकतांत्रिक मूल्यों को बनाए रखने और इसके विकास में सकारात्मक योगदान देने की शपथ लेता हूं। मैं सभी के लिए एक समावेशी, सामंजस्यपूर्ण और समृद्ध राष्ट्र के निर्माण की दिशा में काम करूंगा।",
+            bengali: "আমি শপথ নিচ্ছি যে আমি ভারতের একজন দায়িত্বশীল নাগরিক হব, এর সংবিধানের প্রতি শ্রদ্ধা রাখব, এর গণতান্ত্রিক মূল্যবোধকে সমুন্নত রাখব এবং এর বৃদ্ধি ও উন্নতিতে ইতিবাচক অবদান রাখব। আমি সকলের জন্য একটি অন্তর্ভুক্তিমূলক, সুষম ও সমৃদ্ধ জাতি গঠনের দিকে কাজ করব।",
+            tamil: "நான் இந்தியாவின் பொறுப்பான குடிமகனாக இருப்பேன் என்று உறுதி எடுக்கிறேன், அதன் அரசியலமைப்பை மதிப்பேன், அதன் ஜனநாயக மதிப்புகளைப் பேணுவேன், அதன் வளர்ச்சிக்கும் முன்னேற்றத்திற்கும் நேர்மறையான பங்களிப்பைச் செய்வேன். அனைவருக்கும் உள்ளடக்கிய, ஒத்துழைப்பான மற்றும் செழிப்பான தேசத்தை உருவாக்கும் வழியில் நான் பணியாற்றுவேன்.",
+            telugu: "నేను భారతదేశానికి జవాబుదారీతనంతో కూడిన పౌరుడిగా ఉంటానని ప్రతిజ్ఞ చేస్తున్నాను, దాని రాజ్యాంగాన్ని గౌరవిస్తాను, దాని ప్రజాస్వామ్య విలువలను కాపాడతాను మరియు దాని వృద్ధికి, అభివృద్ధికి సకారాత్మకంగా దోహదపడతాను. అన్ని వర్గాల ప్రజలకు చెందిన సమగ్ర, సామరస్యపూర్వక మరియు సంపన్నమైన దేశాన్ని నిర్మించే దిశగా నేను పని చేస్తాను."
+        };
+
+        languageBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                languageBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                // Update pledge text
+                const lang = btn.getAttribute('data-lang');
+                pledgeText.textContent = pledges[lang] || pledges.english;
+            });
+        });
+
+        // CMS Functionality
+        const cmsPanel = document.getElementById('cmsPanel');
+        const cmsModal = document.getElementById('cmsModal');
+        const cmsClose = document.getElementById('cmsClose');
+        const cmsTabs = document.querySelectorAll('.cms-tab');
+        const cmsTabContents = document.querySelectorAll('.cms-tab-content');
+        const cmsSaveBtns = document.querySelectorAll('.cms-save-btn');
+
+        // Open CMS Modal
+        cmsPanel.addEventListener('click', () => {
+            cmsModal.style.display = 'block';
+        });
+
+        // Close CMS Modal
+        cmsClose.addEventListener('click', () => {
+            cmsModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === cmsModal) {
+                cmsModal.style.display = 'none';
+            }
+        });
+
+        // Tab switching
+        cmsTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                cmsTabs.forEach(t => t.classList.remove('active'));
+                cmsTabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+
+        // Save CMS changes
+        cmsSaveBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const section = btn.getAttribute('data-section');
+                
+                switch(section) {
+                    case 'hero':
+                        document.getElementById('hero-title').textContent = document.getElementById('hero-title').value;
+                        document.getElementById('hero-description').textContent = document.getElementById('hero-description').value;
+                        // In a real implementation, you would update the background image here
+                        break;
+                    case 'about':
+                        document.getElementById('about-title').textContent = document.getElementById('about-title').value;
+                        document.getElementById('about-description').textContent = document.getElementById('about-description').value;
+                        document.getElementById('about-mission').textContent = document.getElementById('about-mission').value;
+                        break;
+                    case 'initiatives':
+                        document.getElementById('initiatives-title').textContent = document.getElementById('initiatives-title').value;
+                        document.getElementById('initiatives-description').textContent = document.getElementById('initiatives-description').value;
+                        break;
+                    case 'pledges':
+                        document.getElementById('pledges-title').textContent = document.getElementById('pledges-title').value;
+                        document.getElementById('pledges-description').textContent = document.getElementById('pledges-description').value;
+                        break;
+                    case 'contact':
+                        document.getElementById('contact-address').textContent = document.getElementById('contact-address').value;
+                        document.getElementById('contact-phone').textContent = document.getElementById('contact-phone').value;
+                        document.getElementById('contact-email').textContent = document.getElementById('contact-email').value;
+                        break;
+                }
+                
+                alert('Changes saved successfully!');
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Newsletter Form Submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
