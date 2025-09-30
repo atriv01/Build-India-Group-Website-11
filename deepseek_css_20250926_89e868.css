@@ -1,0 +1,108 @@
+/* styles/responsive.css */
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .about-content,
+    .founder-content,
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .about-image,
+    .founder-image {
+        order: -1;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
+        background-color: white;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        z-index: 999;
+        padding: 30px;
+    }
+    
+    nav.active {
+        left: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 0 0 20px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .pledge-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cms-panel {
+        display: none; /* Hide CMS panel on mobile for simplicity */
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .pledge-content {
+        padding: 20px;
+    }
+    
+    .cms-content {
+        padding: 20px;
+    }
+    
+    .cms-tabs {
+        flex-direction: column;
+    }
+    
+    .cms-tab {
+        text-align: center;
+    }
+}
